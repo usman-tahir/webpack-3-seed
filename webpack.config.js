@@ -4,6 +4,10 @@ const webpack = require('webpack')
 module.exports = {
     rules: [
         {
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader']
+        },
+        {
             test: /\.js$/,
             exclude: [/node_modules/, /dist/],
             use: [
