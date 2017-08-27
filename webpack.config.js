@@ -2,6 +2,12 @@ const path = require('path')
 const webpack = require('webpack')
 
 module.exports = {
+    rules: [
+        {
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader']
+        }
+    ],
     plugins: [
         new webpack.optimize.CommonsChunkPlugin({
             name: 'commons',
