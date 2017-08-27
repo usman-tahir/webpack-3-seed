@@ -2,6 +2,13 @@ const path = require('path')
 const webpack = require('webpack')
 
 module.exports = {
+    plugins: [
+        new webpack.optimize.CommonsChunkPlugin({
+            name: 'commons',
+            filename: 'commons.js',
+            minChunks: 2
+        })
+    ],
     context: path.resolve(__dirname, 'src'),
     entry: {
         app: './app.js'
